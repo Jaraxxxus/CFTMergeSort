@@ -46,7 +46,7 @@ final class FileWrapperInt  extends FileWrapper{
                 {
                     if (prevNum>number)
                     {
-                        logger.log(Level.WARNING , "strings in "+ fileName +" incorrectly sorted");
+                        logger.log(Level.WARNING , "strings in "+ fileName +" are incorrectly sorted");
                         return null;
 
                     }
@@ -58,7 +58,7 @@ final class FileWrapperInt  extends FileWrapper{
                 else {
                     if (number>prevNum) {
 
-                        logger.log(Level.WARNING, "strings in " + fileName + " incorrectly sorted");
+                        logger.log(Level.WARNING, "strings in " + fileName + " are incorrectly sorted");
                         return null;
                     }
                 }
