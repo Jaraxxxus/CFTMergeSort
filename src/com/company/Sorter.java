@@ -42,7 +42,7 @@ public class Sorter {
 
                 }
                 catch (IOException e) {
-                    logger.log(Level.WARNING, "can't open "+ file);
+                    logger.log(Level.SEVERE, "Exception: " + e.getMessage());
                 }
             }
             else {
@@ -62,7 +62,7 @@ public class Sorter {
 
                 }
                 catch (IOException e) {
-                    logger.log(Level.WARNING, "can't read from  file"+ file);
+                    logger.log(Level.SEVERE, "Exception: " + e.getMessage());
                 }
             }
         }

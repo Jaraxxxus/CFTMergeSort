@@ -16,7 +16,7 @@ final class FileWrapperStr extends FileWrapper{
 
 
 
-    public final String nextValidString(){
+    public String nextValidString(){
         String res = null;
 
         while(res == null){
@@ -25,7 +25,7 @@ final class FileWrapperStr extends FileWrapper{
                     try {
                         reader.close();
                     } catch (IOException e) {
-                        e.printStackTrace(System.err);
+                        logger.log(Level.SEVERE, "Exception: "+ e.getMessage());
                     }
                 }
                 return null;
@@ -48,7 +48,7 @@ final class FileWrapperStr extends FileWrapper{
         try {
             cur=reader.readLine();
         } catch (IOException e) {
-            logger.log(Level.WARNING, "can't read from file"+ fileName);
+            logger.log(Level.SEVERE, "Exception: "+ e.getMessage());
 
         }
 

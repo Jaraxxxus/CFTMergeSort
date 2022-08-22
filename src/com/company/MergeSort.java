@@ -40,11 +40,12 @@ public class MergeSort {
 
 
             }
+            bw.flush();
 
         }
         catch(IOException ex){
-            //logger.log(Level.WARNING, "can't open " + outputFile);
-            logger.log(Level.SEVERE, "Exception: ", ex);
+
+            logger.log(Level.SEVERE, "Exception: " + ex.getMessage());
         }
 
 

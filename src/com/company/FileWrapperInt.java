@@ -20,7 +20,7 @@ final class FileWrapperInt  extends FileWrapper{
         try {
             cur=reader.readLine();
         } catch (IOException e) {
-            logger.log(Level.WARNING, "can't read from  file"+ fileName);
+            logger.log(Level.SEVERE, "Exception: "+ e.getMessage());
 
         }
 
@@ -30,7 +30,7 @@ final class FileWrapperInt  extends FileWrapper{
                 number = Integer.valueOf(cur);
             } catch (NumberFormatException ex)
             {
-                logger.log(Level.WARNING, "it is impossible to convert a string to a integer in "+ fileName);
+                logger.log(Level.SEVERE, "Exception: "+ ex.getMessage());
             }
 
             if (number == null)
@@ -72,7 +72,7 @@ final class FileWrapperInt  extends FileWrapper{
 
     }
 
-    public final Integer nextValidInt(){
+    public Integer nextValidInt(){
         Integer res = null;
         while(res == null){
             if (isFileEnded){
@@ -80,7 +80,7 @@ final class FileWrapperInt  extends FileWrapper{
                     try {
                         reader.close();
                     } catch (IOException e) {
-                        logger.log(Level.WARNING , "can't close file "+ fileName );
+                        logger.log(Level.SEVERE, "Exception: " + e.getMessage());
                     }
                 }
                 return null;
